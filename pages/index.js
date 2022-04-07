@@ -15,7 +15,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    socketRef.current = io.connect(' https://chat-socket-appp.herokuapp.com/');
+    socketRef.current = io.connect("https://backend-chat-demo.herokuapp.com/" && 'http://localhost:8000/');
     socketRef.current.on("message", ({ name, message }) => {
       setChat([...chat, { name, message }]);
     });
